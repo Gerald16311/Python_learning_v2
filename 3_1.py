@@ -7,7 +7,7 @@
 # перевода: какой тип данных выбрать, в теле функции или снаружи.
 
 # создал словарь как глобальную переменную, для возмождности его использования в других функциях
-dict = {
+numbers_dict = {
     "one": "один",
     "two": "два",
     "three": "три",
@@ -23,8 +23,8 @@ dict = {
 
 def num_translate(number_name):
     """Rename english number to russ"""
-    if number_name in dict:
-        return dict[number_name]
+    if number_name in numbers_dict:
+        return numbers_dict[number_name]
     else:
         return None
 
