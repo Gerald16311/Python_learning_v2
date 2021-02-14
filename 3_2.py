@@ -5,7 +5,7 @@
 # >>> num_translate_adv("two")
 # "два"
 
-dict = {
+numbers_dict = {
     "one": "один",
     "two": "два",
     "three": "три",
@@ -22,10 +22,10 @@ dict = {
 def num_translate_adv(number_name):
     """Rename english number to russ"""
     number_name_lower = number_name.lower()
-    if number_name_lower in dict and number_name[0].isupper():
-        return dict[number_name_lower].capitalize()
-    elif number_name_lower in dict:
-        return dict[number_name]
+    if number_name_lower in numbers_dict and number_name[0].isupper():
+        return numbers_dict[number_name_lower].capitalize()
+    elif number_name_lower in numbers_dict:
+        return numbers_dict[number_name]
     else:
         return None
 
