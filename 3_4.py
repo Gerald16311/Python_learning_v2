@@ -18,14 +18,19 @@ users_dict = {}
 def thesaurus_adv(name1, name2, name3, name4, name5):
     names_list = [name1.split(" "), name2.split(" "), name3.split(" "), name4.split(" "), name5.split(" ")]
     print(names_list)
-    print(names_list[0][1][0])
 
-    # for name in names_list:
-    #     if name[0][1][0] in users_dict:
-    #         users_dict[name[0]].append(name)
-    #     else:
-    #         users_dict[name[0]] = [" ".join(name[0])]
-    # return users_dict
+    for name in names_list:
+        if name[1][0] in users_dict:
+            pass
+        else:
+            users_dict[name[1][0]] = {}
+
+    for name in names_list:
+        if name[0][0] in users_dict[name[1][0]]:
+            users_dict[name[1][0]][name[0][0]].append(" ".join(name))
+        else:
+            users_dict[name[1][0]].update({name[0][0]: [(" ".join(name))]})
+    return users_dict
 
 
 print(thesaurus_adv("Иван Сергеев", "Инна Серова", "Петр Алексеев", "Илья Иванов", "Анна Савельева"))
