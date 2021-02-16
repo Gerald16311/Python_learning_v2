@@ -12,8 +12,8 @@
 users_dict = {}
 
 
-def thesaurus(*name_turp):
-    for name in name_turp:
+def thesaurus(*name_list):
+    for name in name_list:
         if name[0] in users_dict:
             users_dict[name[0]].append(name)
         else:
