@@ -18,16 +18,15 @@ users_dict = {}
 def thesaurus_adv(*names_list):
     print(names_list)
     for name in names_list:
-        name_splitted = name.split(" ")
-        if name_splitted[1][0] in users_dict:
+        name_spl = name.split(" ")
+        if name_spl[1][0] in users_dict:
             pass
         else:
-            users_dict[name_splitted[1][0]] = {}
-
-        if name[0][0] in users_dict[name[1][0]]:
-            users_dict[name[1][0]][name[0][0]].append(" ".join(name))
+            users_dict[name_spl[1][0]] = {}
+        if name_spl[0][0] in users_dict[name_spl[1][0]]:
+            users_dict[name_spl[1][0]][name_spl[0][0]].append(name)
         else:
-            users_dict[name[1][0]].update({name[0][0]: [(" ".join(name))]})
+            users_dict[name_spl[1][0]].update({name_spl[0][0]: [name]})
     return users_dict
 
 
