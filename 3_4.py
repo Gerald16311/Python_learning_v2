@@ -15,17 +15,15 @@
 users_dict = {}
 
 
-def thesaurus_adv(name1, name2, name3, name4, name5):
-    names_list = [name1.split(" "), name2.split(" "), name3.split(" "), name4.split(" "), name5.split(" ")]
+def thesaurus_adv(*names_list):
     print(names_list)
-
     for name in names_list:
-        if name[1][0] in users_dict:
+        name_splitted = name.split(" ")
+        if name.split(" ")[1][0] in users_dict:
             pass
         else:
-            users_dict[name[1][0]] = {}
+            users_dict[name.split(" ")[1][0]] = {}
 
-    for name in names_list:
         if name[0][0] in users_dict[name[1][0]]:
             users_dict[name[1][0]][name[0][0]].append(" ".join(name))
         else:
