@@ -33,9 +33,7 @@ for i in range(0, len(text_list)):
         text_list[i] = text_list[i] + " "
 print(text_list)
 
-list_length = len(text_list) - 1
-
-for i in range(list_length, -1, -1):
+for i in range(len(text_list)-1, 0, -1):
     if text_list[i][-1].isdigit():
         text_list.insert(i, '"')
         text_list.insert(i + 2, '" ')
