@@ -15,14 +15,10 @@ for item in cost_list:
     else:
         ruble = int(item)
         kops = round((item - int(item)) * 100)
-        if ruble >= 10:
-            result = f"{ruble} руб "
-        elif ruble < 10:
-            result = f"{ruble} руб "
         if kops >= 10:
-            result += f"{kops} коп"
+            result += f"{ruble} руб {kops} коп"
         elif kops < 10:
-            result += f"0{kops} коп"
+            result += f"{ruble} руб 0{kops} коп"
         cost_list[cost_list.index(item)] = result
 print(", ".join(cost_list))
 
