@@ -18,15 +18,13 @@
 # говорят, in place). Эта задача намного серьезнее, чем может сначала показаться
 
 text_list = ['в', '5', 'часов', '17', 'минут', 'температура', 'воздуха', 'была', '+5', 'градусов']
-_numbers_list = []
+print(text_list)
 
 for i in range(0, len(text_list)):
     number = 0
     symbol = text_list[i][0]
     if text_list[i][-1].isdigit():
         number = abs(int(text_list[i]))
-        if number > 0:
-            _numbers_list.append(text_list.index(text_list[i]))
         if 0 < number < 10:
             text_list[i] = f"0{number}"
         if symbol == "+" or symbol == "-":
