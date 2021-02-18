@@ -10,7 +10,7 @@ for item in cost_list:
         if item >= 10:
             result = f"{item} руб 00 коп"
         else:
-            result = f"0{item} руб 00 коп"
+            result = f"{item} руб 00 коп"
         cost_list[cost_list.index(item)] = result
     else:
         ruble = int(item)
@@ -18,7 +18,7 @@ for item in cost_list:
         if ruble >= 10:
             result = f"{ruble} руб "
         elif ruble < 10:
-            result = f"0{ruble} руб "
+            result = f"{ruble} руб "
         if kops >= 10:
             result += f"{kops} коп"
         elif kops < 10:
