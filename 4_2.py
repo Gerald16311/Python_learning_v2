@@ -14,7 +14,6 @@ def currency_rates(cur):
     r = requests.get('http://www.cbr.ru/scripts/XML_daily.asp')
     tree = ET.fromstring(r.text)
     for i in range(0, len(tree)):
-        # print(f"{tree[i][1].text} и {cur.upper()}")
         if tree[i][1].text == cur.upper():
             return float(tree[i][4].text.replace(",", "."))
 
