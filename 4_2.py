@@ -6,3 +6,13 @@
 # величинами использовать вместо float тип Decimal? Сильно ли усложняется код функции при этом? Если в качестве
 # аргумента передали код валюты, которого нет в ответе, вернуть None. Можно ли сделать работу функции не зависящей от
 # того, в каком регистре был передан аргумент? В качестве примера выведите курсы доллара и евро.
+import requests
+import xml.etree.ElementTree as ET
+
+
+def currency_rates():
+    r = requests.get('http://www.cbr.ru/scripts/XML_daily.asp')
+    print(r.text)
+
+
+currency_rates()
