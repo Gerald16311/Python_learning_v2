@@ -14,7 +14,7 @@ def currency_rates(argv):
     date = datetime(year=int(date_list[2]), month=int(date_list[1]), day=int(date_list[0]))
     for i in range(0, len(tree)):
         if tree[i][1].text == args[0].upper():
-            print(f"Курс валюты {round(float(tree[i][4].text.replace(',', '.')), 2)}, Дата {date.day}-{date.month}-{date.year}")
+            print(f'Курс валюты "{tree[i][3].text}" {round(float(tree[i][4].text.replace(",", ".")), 2)}, Дата {date.day}-{date.month}-{date.year}')
 
 
 if __name__ == '__main__':

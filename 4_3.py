@@ -14,7 +14,7 @@ def currency_rates(cur):
     for i in range(0, len(tree)):
         # print(f"{tree[i][1].text} и {cur.upper()}")
         if tree[i][1].text == cur.upper():
-            return f"Дата {date.day}-{date.month}-{date.year} Курс валюты {float(tree[i][4].text.replace(',', '.'))}"
+            return f'Дата {date.day}-{date.month}-{date.year} Курс валюты "{tree[i][3].text}" {float(tree[i][4].text.replace(",", "."))}'
 
 
 print(currency_rates('USD'))
