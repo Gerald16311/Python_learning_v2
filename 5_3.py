@@ -13,12 +13,11 @@ klasses = ['9А', '7В', '9Б', '9В', '8Б', '10А', '10Б', '9А']
 #
 # Доказать, что вы создали именно генератор. Проверить его работу вплоть до истощения. Подумать, в каких ситуациях
 # генератор даст эффект.
-def names_result(tutor, klass):
-    for i in range(0, len(tutor)):
-        name = tuple(zip(tutor, klass))
-    yield name
 
 
-get = names_result(tutors, klasses)
+names_result = zip((name for name in tutors), (klass for klass in klasses))
 
-print(next(get))
+print(next(names_result), *names_result)
+
+
+
