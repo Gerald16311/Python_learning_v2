@@ -16,14 +16,6 @@ def odd_nums(n):
 
 
 n = int(input("Введите до какого числа генерировать нечетные числа - "))
-
 odd_to_n = odd_nums(n)
+print(next(odd_to_n), *odd_to_n)
 
-print(next(odd_to_n))
-print(next(odd_to_n))
-print(next(odd_to_n))
-print(next(odd_to_n))
-print(next(odd_to_n))
-print(next(odd_to_n))
-print(next(odd_to_n))
-print(next(odd_to_n))
