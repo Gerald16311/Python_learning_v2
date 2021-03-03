@@ -18,7 +18,7 @@ import itertools
 tutors = ['Иван', 'Анастасия', 'Петр', 'Сергей', 'Дмитрий', 'Борис', 'Елена', 'Станислав', 'Генадий']
 klasses = ['9А', '7В', '9Б', '9В', '8Б', '10А', '10Б', '9А']
 
-names_result = itertools.zip_longest((name for name in tutors), (klass for klass in klasses))
+names_result = itertools.zip_longest((name for name in tutors), (klass for klass in klasses), fillvalue=None)
 
 print(*names_result)
 
