@@ -6,16 +6,19 @@ src = [2, 2, 2, 7, 23, 1, 44, 44, 3, 2, 10, 7, 4, 11]
 #
 # Подсказка: напишите сначала решение «в лоб». Потом подумайте об оптимизации.
 
-unique_items = set()
-tmp = set()
-for item in src:
-    if item not in tmp:
-        unique_items.add(item)
-    else:
-        unique_items.discard(item)
-    tmp.add(item)
+# unique_items = set()
+# tmp = set()
+# for item in src:
+#     if item not in tmp:
+#         unique_items.add(item)
+#     else:
+#         unique_items.discard(item)
+#     tmp.add(item)
+#
+# unique_items_ord = [item for item in src if item in unique_items]
+#
+# print(f"Вывод уникальных элементов {unique_items}")
+# print(f"Вывод с сохраненной очередностью {unique_items_ord}")
 
-unique_items_ord = [item for item in src if item in unique_items]
-
-print(f"Вывод уникальных элементов {unique_items}")
-print(f"Вывод с сохраненной очередностью {unique_items_ord}")
+result = [num for num in src if src.count(num) == 1]
+print(result)
