@@ -21,4 +21,4 @@ src = [2, 2, 2, 7, 23, 1, 44, 44, 3, 2, 10, 7, 4, 11]
 # print(f"Вывод с сохраненной очередностью {unique_items_ord}")
 
 result = [num for num in src if src.count(num) == 1]
-print(result)
+print(f"Вывод уникальных элементов {result}")
