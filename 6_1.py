@@ -6,3 +6,11 @@
 # ('173.255.199.22', 'GET', '/downloads/product_2'), ... ]
 #
 # Примечание: код должен работать даже с файлами, размер которых превышает объем ОЗУ компьютера.
+
+result = []
+with open('nginx_logs.txt', encoding='utf-8') as f:
+    for line in f:
+        content = f.readline().split()
+        result.append((content[0], content[5].replace('"', ''), content[6]))
+
+print(result)
