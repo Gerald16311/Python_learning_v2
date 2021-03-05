@@ -15,4 +15,4 @@ for ip in result:
         spam_ip_count = result.count(ip)
         spam_ip = ip
 
-print(f"IP адресс спамера {spam_ip}, кодличество запросов {spam_ip_count}")
+print(f"IP адресс спамера {spam_ip}, количество запросов {spam_ip_count}")
