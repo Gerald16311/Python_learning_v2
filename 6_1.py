@@ -10,7 +10,7 @@
 result = []
 with open('nginx_logs.txt', encoding='utf-8') as f:
     for line in f:
-        content = f.readline().split()
+        content = line.split()
         result.append((content[0], content[5].replace('"', ''), content[6]))
 
 print(result)
