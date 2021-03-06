@@ -3,3 +3,14 @@
 # создавать словарь с данными. Вместо этого нужно сохранить объединенные данные в новый файл (users_hobby.txt). Хобби
 # пишем через двоеточие и пробел после ФИО: Иванов,Иван,Иванович: скалолазание,охота Петров,Петр,Петрович: горные лыжи
 
+with open('users.csv', encoding='utf-8') as users_file:
+    with open('hobby.csv', encoding='utf-8') as hobby_file:
+        for line in users_file:
+            if line:
+                hobby = hobby_file.readline()
+                name = line.replace("\n", "")
+                result = f'{name}: {hobby if hobby else None}'
+            else:
+                print("1")
+            with open('users_hobby.txt', 'a', encoding='utf-8') as f:
+                f.write(result)
