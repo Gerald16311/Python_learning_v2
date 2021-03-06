@@ -14,24 +14,10 @@ result = {}
 
 with open('users.csv', encoding='utf-8') as users_file:
     with open('hobby.csv', encoding='utf-8') as hobby_file:
-        names_line = users_file.readline()
-        hobby_line = hobby_file.readline()
-        while names_line:
-            if not names_line:
+        for line in users_file:
+            if line:
+                hobby = hobby_file.readline()
+                result[line.replace("\n", "")] = hobby.replace("\n", "") if hobby else None
+            else:
                 print("1")
-                break
-            else:
-                names_line = users_file.readline()
-                user_name = names_line.replace("\n", "")
-
-        while hobby_line:
-            if not hobby_line:
-                user_hobby = "None"
-                hobby_line = hobby_file.readline()
-            else:
-                hobby_line = hobby_file.readline()
-                user_hobby = hobby_line.replace("\n", "")
-
-        result[user_name] = user_hobby
-
 print(result)
