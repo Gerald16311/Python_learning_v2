@@ -4,7 +4,6 @@ import sys
 
 
 def add_information(argv):
-    print(argv)
     program, *args = argv
     user_file = args[0]
     hobb_file = args[1]
