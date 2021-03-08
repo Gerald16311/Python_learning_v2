@@ -1,26 +1,16 @@
 def show_sales(argv):
     program, *args = argv
-    count = 0
-    start, stop = 0, 0
-
-    if len(args) == 2:
-        start = int(args[0])
-        stop = int(args[1])
-    elif len(args) == 1:
-        start = int(args[0])
-
-    print(start)
-    print(stop)
+    start = int(args[0]) if len(args) >= 1 else 0
+    stop = int(args[1]) if len(args) == 2 else 0
 
     with open("bakery.csv", encoding='utf-8') as f:
-        for line in f:
-            count += 1
-            if not args:
-                print(line.replace("\n", ""))
-            elif start <= count <= stop:
-                print(line.replace("\n", ""))
-            elif start <= count and len(args) == 1:
-                print(line.replace("\n", ""))
+        for line in enumerate(f):
+            if start == 0:
+                print(line[1].strip())
+            elif start <= line[0] <= stop:
+                print(line[1].strip())
+            elif start <= line[0] and stop == 0:
+                print(line[1].strip())
 
 
 if __name__ == '__main__':
