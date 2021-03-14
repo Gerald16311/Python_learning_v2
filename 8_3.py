@@ -14,3 +14,19 @@
 # >>> a = calc_cube(5)
 # calc_cube(5: <class 'int'>)
 
+def type_logger(func):
+    def wrapper(*args, **kwargs):
+        result = func(*args, **kwargs)
+        for i in args:
+            print(f'{i}: {type(i)}')
+        return result
+    return wrapper
+
+
+@type_logger
+def calc_cube(*args):
+    return args[0] ** 3
+
+
+a = calc_cube(5)
+print(a)
