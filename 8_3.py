@@ -15,13 +15,18 @@
 # Сможете ли вывести имя функции, например, в виде:
 # >>> a = calc_cube(5)
 # calc_cube(5: <class 'int'>)
+from functools import wraps
+
 
 def type_logger(func):
+    @wraps(func)
     def wrapper(*args, **kwargs):
-        result = func(*args, **kwargs)
         for i in args:
-            print(f'{i}: {type(i)}')
+            # print(f'{i}: {type(i)}')
+            print(f'{func.__name__}({i}: {type(i)}')
+        result = func(*args, **kwargs)
         return result
+
     return wrapper
 
 
