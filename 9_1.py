@@ -8,3 +8,30 @@
 # проверить работу примера, создав экземпляр и вызвав описанный метод.
 # Задачу можно усложнить, реализовав проверку порядка режимов. При его нарушении выводить соответствующее сообщение и
 # завершать скрипт.
+import time
+
+
+class TrafficLight:
+    __color = ("Красный", 'Желтый', 'Зеленый')
+    color_index = 0
+
+    def running(self):
+        color = self.__color[self.color_index]
+        print(f'Загорелся {color} сигнал светофора')
+        if color == "Красный":
+            time.sleep(7)
+        elif color == "Желтый":
+            time.sleep(2)
+        else:
+            time.sleep(3)
+        print(f'{color} сигнал светофора погас')
+        if self.color_index == 2:
+            self.color_index = -1
+        self.color_index += 1
+
+
+a = TrafficLight()
+a.running()
+a.running()
+a.running()
+a.running()
