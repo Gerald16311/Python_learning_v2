@@ -7,3 +7,22 @@
 # (get_total_income);
 # проверить работу примера на реальных данных: создать экземпляры класса Position, передать данные, проверить значения
 # атрибутов, вызвать методы экземпляров.
+class Worker:
+    def __init__(self, name, surname, position, wage, bonus):
+        self.name = name
+        self.surname = surname
+        self.position = position
+        self._income = {"wage": wage, "bonus": bonus}
+
+
+class Position(Worker):
+    def get_full_name(self):
+        print(f'Полное имя сотрудника {self.name} {self.surname}')
+
+    def get_total_income(self):
+        print(f'Вся зарплата сотрудника {self._income["wage"]+self._income["bonus"]}')
+
+
+people = Position("Илья", "Марчуков", "Инженегр", 20, 30)
+people.get_full_name()
+people.get_total_income()
