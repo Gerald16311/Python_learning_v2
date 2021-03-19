@@ -19,3 +19,49 @@
 # Или количество ячеек клетки — 15, а количество ячеек в ряду равняется 5. Тогда метод make_order()
 # вернёт строку: *****\n*****\n*****.
 # Подсказка: подробный список операторов для перегрузки доступен по ссылке.
+class cell:
+    def __init__(self,count):
+        self.count = count
+
+    def __str__(self):
+        return str(self.count)
+
+    def __add__(self, other):
+        return cell(self.count + other.count)
+
+    def __sub__(self, other):
+        if self.count > other.count:
+            return cell(self.count - other.count)
+        else:
+            return "отрицательный результат"
+
+    def __mul__(self, other):
+        return cell(self.count * other.count)
+
+    def __floordiv__(self, other):
+        return cell(self.count // other.count)
+
+    def __truediv__(self, other):
+        return cell(self.count // other.count)
+
+    def make_order(self,in_line_count):
+        result = ""
+        while self.count !=0:
+            if self.count > in_line_count:
+                result += '*' * in_line_count + "\n"
+                self.count -= in_line_count
+            else:
+                result += '*' * self.count
+                self.count = 0
+        return result
+
+
+a = cell(10)
+b = cell(60)
+
+print(f'результат сложения {a + b}')
+print(f'результат вычитания {a - b}')
+print(f'результат умножения {a * b}')
+print(f'результат деления {a / b}')
+print(f' результат функции make_order \n{a.make_order(8)}')
+print(f' результат функции make_order \n{b.make_order(15)}')
